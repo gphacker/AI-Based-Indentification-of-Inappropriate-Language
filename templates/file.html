@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="static\style.css" />
+  </head>
+  <body style="background-color: black;">
+    <div class="head">
+      <h1>
+          AI BASED IDENTIFICATION OF INAPPROPRIATE LANGUAGE
+      </h1>
+    </div>
+
+    <center><h3>{{msg}}</h3></center>
+    <div class="input-section">
+        <form method="post" action="/file">
+            <label style="color:white;">Enter your Input (Tweet/Comment/Caption)</label><br>
+        <textarea  name="text" rows="4" cols="50">
+        </textarea>
+            <br>
+            <h4 style="color: white;">Choose Algorithm</h4>
+            <select name="name">
+                <option value="RandomForest">Random Forest</option>
+                <option value="DecisionTree">Decision Tree</option>
+                <option value="Lstm">LSTM</option>
+            </select>
+            <br>
+        <button class="button">Submit</button>
+        </form>
+        
+        <h6 style="color: white;">Prediction is : {{ prediction }}</h6>
+
+        <a href="{{ url_for('home') }}"><button class="homepage">Home Page</button></a>
+
+    </div>
+
+
+  </body>
+</html>
